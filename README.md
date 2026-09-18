@@ -2,6 +2,8 @@
 
 > **Bounded online strategy weighting and regime-aware adaptation for systematic portfolios**
 
+Version: `2.0.0`
+
 **Enterprise v2.0.0** · Python 3.11+ · FastAPI/OpenAPI · Docker/Compose · PostgreSQL/ClickHouse audit · RBAC/JWT · automated tests
 
 **Designed for:** Quant funds, prop firms, systematic portfolio teams and adaptive research desks  
