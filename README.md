@@ -103,3 +103,70 @@ flowchart LR
 `GREEN` означает только воспроизводимо подтверждённый тезис. Гипотеза, benchmark без корректного протокола, архитектурная диаграмма или красивый экономический цикл сами по себе GREEN не дают.
 
 <!-- SYNERGY-FEDERATION-PASSPORT:END -->
+---
+
+# 🧠 Глубокая техническая спецификация Adaptive Engine
+
+## 🎯 Проблема
+
+Онлайн-адаптация легко превращается в скрытое переобучение на шуме. Движок должен менять веса стратегий только внутри заранее определённых границ.
+
+## 🏗️ Pipeline
+
+```mermaid
+flowchart LR
+    N0[Strategy outcomes] --> N1[Regime features] --> N2[Bounded updater] --> N3[Weight constraints] --> N4[Risk-aware allocation] --> N5[Versioned adaptive state]
+```
+
+## 📥 Входы
+
+- strategy scores;
+- recent outcomes;
+- regime state;
+- turnover/cost;
+- policy bounds;
+- current weights;
+
+## 📤 Выходы
+
+- new bounded weights;
+- adaptation reason;
+- state version;
+- confidence/uncertainty;
+- rollback target;
+
+## 🛡️ Непереговорные инварианты
+
+```text
+weight bounds are hard
+no hidden strategy creation
+adaptation cannot bypass RiskGuard
+state updates are versioned/idempotent
+rollback path required
+```
+
+## 🧪 Как ловить ложный GREEN
+
+- health/API throughput не использовать как доказательство market edge;
+- обязательны timestamp/state-version checks;
+- adversarial/negative fixtures должны проверять отказ;
+- сохранять полный request → decision → execution/evidence trace;
+- live claims отделять от local smoke и simulation;
+- cost/latency/failure assumptions должны быть явными.
+
+## 🔗 Контракт с соседями
+
+- [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai)
+- [`synergy_quantlab`](https://github.com/Shtenco/synergy_quantlab)
+- [`synergy_riskguard`](https://github.com/Shtenco/synergy_riskguard)
+- [`synergy_ai_investment_committee`](https://github.com/Shtenco/synergy_ai_investment_committee)
+
+## 🚀 Следующий доказательный рубеж
+
+1. frozen acceptance fixtures;
+2. negative/adversarial suite;
+3. typed cross-repo schema;
+4. end-to-end trace ID;
+5. rollback/recovery evidence;
+6. documented failure-mode table;
+7. reproducible evidence bundle.
