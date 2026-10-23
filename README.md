@@ -73,17 +73,17 @@ These HTTP figures are a local container smoke benchmark against `/enterprise/he
 <!-- SYNERGY-FEDERATION-PASSPORT:START -->
 ---
 
-## 🧭 SYNERGY federation passport
+##  SYNERGY federation passport
 
-**Домен:** 🧠 Adaptive regime engine  
+**Домен:**  Adaptive regime engine  
 **Архитектурный родитель:** [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai)  
 **Архитектурный корень:** [`synergy_system`](https://github.com/Shtenco/synergy_system)
 
 ```mermaid
 flowchart LR
-    SYS[🧭 synergy_system] --> P[synergy_midas_ai]
+    SYS[ synergy_system] --> P[synergy_midas_ai]
     P --> THIS[synergy_adaptive_engine]
-    THIS --> E[📦 Evidence / outputs]
+    THIS --> E[ Evidence / outputs]
 ```
 
 Архитектурная стрелка — это карта федерации, а не автоматически подтверждённая runtime dependency.
@@ -94,9 +94,9 @@ flowchart LR
 
 ### Навигация
 
-- [📚 Атлас всех 75 репозиториев](https://github.com/Shtenco/synergy_system/blob/main/docs/SYNERGY_REPOSITORY_ATLAS.md)
-- [🧾 Машиночитаемый registry](https://github.com/Shtenco/synergy_system/blob/main/registry/SYNERGY_REPOSITORIES.json)
-- [🧭 SYNERGY SYSTEM](https://github.com/Shtenco/synergy_system)
+- [ Атлас всех 75 репозиториев](https://github.com/Shtenco/synergy_system/blob/main/docs/SYNERGY_REPOSITORY_ATLAS.md)
+- [ Машиночитаемый registry](https://github.com/Shtenco/synergy_system/blob/main/registry/SYNERGY_REPOSITORIES.json)
+- [ SYNERGY SYSTEM](https://github.com/Shtenco/synergy_system)
 
 ### Evidence rule
 
@@ -105,20 +105,20 @@ flowchart LR
 <!-- SYNERGY-FEDERATION-PASSPORT:END -->
 ---
 
-# 🧠 Глубокая техническая спецификация Adaptive Engine
+#  Глубокая техническая спецификация Adaptive Engine
 
-## 🎯 Проблема
+##  Проблема
 
 Онлайн-адаптация легко превращается в скрытое переобучение на шуме. Движок должен менять веса стратегий только внутри заранее определённых границ.
 
-## 🏗️ Pipeline
+##  Pipeline
 
 ```mermaid
 flowchart LR
     N0[Strategy outcomes] --> N1[Regime features] --> N2[Bounded updater] --> N3[Weight constraints] --> N4[Risk-aware allocation] --> N5[Versioned adaptive state]
 ```
 
-## 📥 Входы
+##  Входы
 
 - strategy scores;
 - recent outcomes;
@@ -127,7 +127,7 @@ flowchart LR
 - policy bounds;
 - current weights;
 
-## 📤 Выходы
+##  Выходы
 
 - new bounded weights;
 - adaptation reason;
@@ -135,7 +135,7 @@ flowchart LR
 - confidence/uncertainty;
 - rollback target;
 
-## 🛡️ Непереговорные инварианты
+##  Непереговорные инварианты
 
 ```text
 weight bounds are hard
@@ -145,7 +145,7 @@ state updates are versioned/idempotent
 rollback path required
 ```
 
-## 🧪 Как ловить ложный GREEN
+##  Как ловить ложный GREEN
 
 - health/API throughput не использовать как доказательство market edge;
 - обязательны timestamp/state-version checks;
@@ -154,14 +154,14 @@ rollback path required
 - live claims отделять от local smoke и simulation;
 - cost/latency/failure assumptions должны быть явными.
 
-## 🔗 Контракт с соседями
+##  Контракт с соседями
 
 - [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai)
 - [`synergy_quantlab`](https://github.com/Shtenco/synergy_quantlab)
 - [`synergy_riskguard`](https://github.com/Shtenco/synergy_riskguard)
 - [`synergy_ai_investment_committee`](https://github.com/Shtenco/synergy_ai_investment_committee)
 
-## 🚀 Следующий доказательный рубеж
+##  Следующий доказательный рубеж
 
 1. frozen acceptance fixtures;
 2. negative/adversarial suite;
