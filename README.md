@@ -1,3 +1,9 @@
+<!-- SCIENTIFIC-V4-2026:START -->
+<img src="assets/readme/scientific-architecture-v4.svg" width="100%" alt="ADAPTIVE ENGINE / ONLINE EXPERTS"/>
+
+[Научное досье V4](docs/SCIENTIFIC_DOSSIER_V4_2026.md) — оригинальная модель, экспериментальная проверка, применение. Прежний README сохранён полностью.
+<!-- SCIENTIFIC-V4-2026:END -->
+
 # SYNERGY Adaptive Engine
 
 > **Bounded online strategy weighting and regime-aware adaptation for systematic portfolios**
